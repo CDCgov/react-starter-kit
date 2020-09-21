@@ -30,7 +30,7 @@ export default ({ backgroundColor }) => {
    * Learn more: https://reactjs.org/docs/introducing-jsx.html
    */
 
-// Hi!
+// Hi!!
 
   return (
       <section style={styleObj} className="container mt-5">
