@@ -29,6 +29,9 @@ export default ({ backgroundColor }) => {
    * 
    * Learn more: https://reactjs.org/docs/introducing-jsx.html
    */
+
+// Hi
+
   return (
       <section style={styleObj} className="container mt-5">
         <h2 className="mb-3">CDC React Starter Kit</h2>
