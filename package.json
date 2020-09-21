@@ -42,8 +42,8 @@
     }
   },
   "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "eslint src/**/*.js --fix-dry-run"
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint src/**/*.js"
     ]
   }
 }
