@@ -60,7 +60,7 @@ Obviously if there's a need, we can be flexible here but best to discuss with th
 
 **Popular React Extensions and Packages**
 
-
+There are many packages that are used with React for common things like state management or routing etc... like Redux as discussed above. These packages rise and fall in popularity. This starter kit does not attempt to be prescriptive when it comes to individual packages, just this guiding principal: If the larger React ecosystem has coalesced around a particular package and it meets our requirements, we should use that package. For instance, [React Router](https://reactrouter.com/) is the de facto routing package at the time of this writing for React, but there's another package called [Reach Router](https://reach.tech/router/). If they both support the thing we're trying to do, the developer should favor the more popular package.
 
 ## Browser Support
 
