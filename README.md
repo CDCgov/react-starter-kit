@@ -6,9 +6,11 @@ Modern front-end development has become very complex. The most important guiding
 
 ## Getting Started
 
-1. Clone this repository
-2. Run `npm install` to install the needed packages
-3. Run `npm start` to start up the development server. It should open your default browser with the URL and refresh to reflect code changes you make upon save.
+1. Click the "Use This Template" green button at the top right on Github, or simply follow [this link](https://github.com/CDCgov/react-starter-kit/generate).
+   - Make sure you select the appropriate organization. If this is for an internal project that will not be shared as open source, please select **`cdcent`** not `cdcgov`.
+2. Clone the newly created repository
+3. Run `npm install` to install the needed packages
+4. Run `npm start` to start up the development server. It should open your system's default browser with the URL and refresh to reflect code changes you make upon save.
 
 ### Building
 
