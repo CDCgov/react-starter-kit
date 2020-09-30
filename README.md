@@ -66,3 +66,9 @@ Routing | [React Router](https://reactrouter.com/)
 Chrome | Firefox | IE | Safari | Edge
 --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | 11 ✔ | Latest ✔ | Latest ✔ |
+
+## Open Sourcing
+
+While a lot of the code used in this starter kit will be for internal code, we should attempt to open source when we can. If you plan on open sourcing the code, be sure to use the `cdcgov` organization (the organization that this starter kit is hosted with) instead of the `cdcent` organization. You might have to request access to do this, and there are also policies and procedures that should be followed before open sourcing a project. [This repository](https://github.com/CDCgov/template) has a good starting point with a link to a form to get access to `cdcgov`, the process and additional information you need to add to your repository if you want to make it an open source project.
+
+The reason this repository does not have a lot of those files is because it is a template for specific use by teams in CDC and not oriented towards larger community contributions at this time.
