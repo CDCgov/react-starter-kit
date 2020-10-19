@@ -69,6 +69,14 @@ Latest ✔ | Latest ✔ | 11 ✔ | Latest ✔ | Latest ✔ |
 
 ## Open Sourcing
 
-While a lot of the code used in this starter kit will be for internal code, we should attempt to open source when we can. If you plan on open sourcing the code, be sure to use the `cdcgov` organization (the organization that this starter kit is hosted with) instead of the `cdcent` organization. You might have to request access to do this, and there are also policies and procedures that should be followed before open sourcing a project. [This repository](https://github.com/CDCgov/template) has a good starting point with a link to a form to get access to `cdcgov`, the process and additional information you need to add to your repository if you want to make it an open source project.
+While a lot of the code used in this starter kit will be for internal code, we should attempt to open source when we can. If you plan on open sourcing code built off this project, be sure to use the `cdcgov` organization (the organization that this starter kit is hosted with) instead of the `cdcent` organization. You might have to request access to do this, and there are also policies and procedures that should be followed before open sourcing a project. [This repository](https://github.com/CDCgov/template) has a good starting point with a link to a form to get access to `cdcgov`, the process and additional information you need to add to your repository if you want to make it an open source project.
 
-The reason this repository does not have a lot of those files is because it is a template for specific use by teams in CDC and not oriented towards larger community contributions at this time.
+## Contributing
+
+Contributions to this starter kit from outside users are welcome, though if they do not fit our specific team's needs they will likely be rejected. You are welcome to fork the project if that happens. If you are not an approved contributor, you will have to [fork this repository](https://help.github.com/articles/fork-a-repo) and submit a pull request that way.
+
+All comments, messages, pull requests, and other submissions received through CDC including this GitHub page may be subject to applicable federal law, including but not limited to the Federal Records Act, and may be archived. Learn more at http://www.cdc.gov/other/privacy.html.
+
+## Privacy Notice
+
+This repository contains only non-sensitive, publicly available data and information. All material and community participation is covered by the [Disclaimer](https://github.com/CDCgov/template/blob/master/DISCLAIMER.md) and [Code of Conduct](https://github.com/CDCgov/template/blob/master/code-of-conduct.md). For more information about CDC's privacy policy, please visit http://www.cdc.gov/other/privacy.html.
