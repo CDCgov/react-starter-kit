@@ -7,17 +7,21 @@ module.exports = {
         filename: 'bundle.js'
     },
     devServer: {
-        open: true
+        open: true,
+        overlay: {
+          warnings: false,
+          errors: true
+        }
     },
     module: {
         rules: [
           {
-            test: /\.(png|jpe?g|gif|svg)$/i,
+            test: /\.(png|jp(e*)g|svg|gif)$/,
             use: [
               {
                 loader: 'file-loader',
                 options: {
-                  name: 'assets/[name].[ext]'
+                  name: 'images/[name].[ext]'
                 }
               },
             ],
@@ -28,7 +32,13 @@ module.exports = {
             use: {
               loader: 'babel-loader',
               options: {
-                presets: ['@babel/preset-env', '@babel/preset-react']
+                presets: [
+                  '@babel/preset-env',
+                  '@babel/preset-react',
+                  {
+                    plugins: ['@babel/plugin-proposal-class-properties']
+                  }
+                ]
               },
             }
           },
