@@ -1,5 +1,4 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Development Configuration
@@ -37,10 +36,6 @@ module.exports = (env, { mode }) => {
     },
     module: {
       rules: [
-        {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        },
         {
           test: /\.(png|jp(e*)g|svg|gif)$/,
           use: [
@@ -83,14 +78,3 @@ module.exports = (env, { mode }) => {
     }
   }
 }
-
-// // Production Configuration
-// module.exports = {
-//   mode: 'production',
-//   devtool: false,
-//   performance: {
-//     hints: false,
-//     maxEntrypointSize: 512000,
-//     maxAssetSize: 512000
-//   },
-//   stats: "verbose",
