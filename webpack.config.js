@@ -34,6 +34,9 @@ module.exports = (env, { mode }) => ({
       errors: true
     }
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   module: {
     rules: [
       {
@@ -84,6 +87,11 @@ module.exports = (env, { mode }) => ({
             },
           },
         ],
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       }
     ]
   }

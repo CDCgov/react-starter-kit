@@ -2,6 +2,7 @@ import 'react-app-polyfill/ie11';
 import React, { useState, useContext } from 'react';
 import Context from '../context';
 import testImage from '../assets/test-image.png';
+import SecondComponent from './Second.tsx';
 
 export default function Example({ backgroundColor }) {
   /**
@@ -112,6 +113,7 @@ export default function Example({ backgroundColor }) {
           />
         </label>
       </form>
+      <SecondComponent />
     </section>
   );
 }
