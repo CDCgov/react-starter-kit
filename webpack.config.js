@@ -8,7 +8,7 @@ module.exports = (env, { mode }) => ({
   entry: './src/index.js',
   devtool: mode === 'development' ? 'inline-source-map' : false,
   performance: {
-    hints: mode === 'development' ? false : 'error',
+    hints: mode === 'development' ? false : 'warning',
     maxEntrypointSize: 512000,
     maxAssetSize: 512000
   },
@@ -25,14 +25,20 @@ module.exports = (env, { mode }) => ({
   stats: 'minimal',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: '[name].js',
   },
   devServer: {
     open: true,
-    overlay: {
-      warnings: false,
-      errors: true
-    }
+    client: {
+			overlay: {
+				warnings: false,
+				errors: true
+			}
+		}
+    // In Dev mode you can serve up assets beyond your React app by specifying local paths
+    // to serve additional static content from. The pathes added to static will serve from
+    // //localhost:8080/
+    // static: [ path.join( __dirname, './src' ) ]
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -56,12 +62,13 @@ module.exports = (env, { mode }) => ({
         use: {
           loader: 'babel-loader',
           options: {
+            // Babel will attempt to
             presets: [
               '@babel/preset-env',
               '@babel/preset-react',
-              {
-                plugins: ['@babel/plugin-proposal-class-properties']
-              }
+            ],
+            plugins: [
+              '@babel/plugin-proposal-class-properties',
             ]
           },
         }
