@@ -64,7 +64,13 @@ module.exports = (env, { mode }) => ({
           options: {
             // Babel will attempt to
             presets: [
-              '@babel/preset-env',
+              [
+                '@babel/preset-env',
+                {
+                  corejs: { version: 3 },
+									useBuiltIns: 'entry',
+                }
+              ],
               '@babel/preset-react',
             ],
             plugins: [
