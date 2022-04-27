@@ -1,14 +1,13 @@
-# React Starter Kit
+# CDC React Starter Kit
 
-This is a simple starter kit ("stub") for creating [ReactJS](https://reactjs.org/) based projects.
-
-There's many ways to start a React project if you haven't already. Some teams prefer to use [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) command line tool, which is another valid starting point. This just bakes in some starting setup for a standard JS effort.
+This is a simple starter kit ("stub") for creating [ReactJS](https://reactjs.org/) based projects. There's a few different ways to start a React project if you haven't already; some teams prefer to use [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) command line tool. This approach uses WebPack and bakes in some starting setup for a standard JS app effort.
 
 
 - [ESLint](https://eslint.org/) configuration
 - [Prettier](https://prettier.io/docs/en/index.html) config
-- Precommit hooks
-- Babel translation for older browsers (IE11)
+- [WebPack](https://webpack.js.org/) configuration for local development and building assets
+- [Babel](https://babeljs.io/) translation for older browsers (IE11)
+- Precommit hooks with lint checks
 
 For CDC this also includes some information for supporting CDC.gov specific web tools.
 
@@ -38,28 +37,47 @@ And built assets will update under the `./dist/` folder. There are used for the 
 
 This section describes the major underlying components of the project and how they all fit together.
 
-**Webpack**
-Similar to other build tools like [Gulp](https://gulpjs.com/) and [Grunt](https://gruntjs.com/), this is the main "task runner" for the project. It is responsible for the following:
-* Locally, starting the dev server and auto refreshing when changes are saved
-* Compiling SASS into CSS, and JS / TypeScript files into browser-ready, legacy browser-compatible JavaScript
-* Handling the build process when the code is ready to be used in production
+- **[Webpack](https://webpack.js.org/)**
+    Similar to other build tools like [Gulp](https://gulpjs.com/) and [Grunt](https://gruntjs.com/), this is the main "task runner" for the project. It is responsible for the following:
+    * Locally, starting the dev server and auto refreshing when changes are saved
+    * Compiling SASS into CSS, and JS / TypeScript files into browser-ready, legacy browser-compatible JavaScript
+    * Handling the build process when the code is ready to be used in production
 
-The configuration is stored in `webpack.config.js`. The one included has some default settings to begin, and you can check [Webpack documentation](https://webpack.js.org/configuration/) to see what options are available.
+    The configuration is stored in `webpack.config.js`. The one included has some default settings to begin, and you can check [Webpack documentation](https://webpack.js.org/configuration/) to see what options are available.
 
-**Babel**
-This parses the JavaScript in the project and transforms it into code that can be supported by older browsers. It lets you use newer ES6 style syntax and still support IE11. Notably, Babel is also the step in the process that turns the easy to read JSX into more traditional JavaScript objects.
+- **[Babel](https://babeljs.io/)**
+    This parses the JavaScript in the project and transforms it into code that can be supported by older browsers. It lets you use newer ES6 style syntax and still support IE11. Notably, Babel is also the step in the process that turns the easy to read JSX into more traditional JavaScript objects.
+    Currently Babel is configured inside `webpack.config.js`, but can be configured separately in its own file if preferred.
 
-Currently Babel is configured inside `webpack.config.js`, but can be configured separately in its own file if preferred.
+- **[ESLint](https://eslint.org/)**
+    This tool helps maintain code style as well as finds potential issues in your code. Most IDEs can integrate with your config to check for mistakes and automatically fix on request.
+    - [VSCode ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-**ESLint**
-This tool helps maintain code style as well as finds potential issues in your code. Most IDEs can integrate with your config to check for mistakes and automatically fix on request.
+    The configuration file `.eslintrc.js` currently extends the ESLint ruleset `eslint-config-react-app`, which is not very *opinionated* (not many rules enforced). You can further refine the rules in the file down to the rules you want to enforce, or install and extend your own preferred rulesets.
 
-The configuration file `.eslintrc.js` currently extends the ESLint ruleset `eslint-config-react-app`, which is not very *opinionated* (not many rules enforced). You can further refine the rules in the file down to the rules you want to enforce, or install and extend your own preferred rulesets.
+- **[Prettier](https://prettier.io/docs/en/index.html)**
+    Prettier is a popular tool for keeping JS, JSX, CSS, SCSS, TS, and other web files formatted in a standardized way. Up front it says it's opinionated, which means it's simple. It's well received within the web community, and this repo includes a base setup. See their documentation on configuration options.
+    - *Spaces versus Tabs:* This repo uses tabs, but update `.prettierrc` to fix this to your liking.
+
+### Code Management Notes
+
+If you use this for a project base, you'll want to clean out a lot of these documentation files and update them for your own purposes. A few notes on maintenance:
+
+- The [NPM](https://www.npmjs.com/) online repository for NodeJS libraries will continue to evolve and release libraries updates to address features and security issues. Make sure to check your repo regularly for security issues:
+  ```bash
+  npm audit fix
+  ```
+- Libraries can quickly add to your output JS file weight. Be judicious in what you use. Most web users are using a mobile phone, often mobile data, so bandwidth counts. CDC's public health mission is to target all possible audiences, so web footprint / page weight is important.
+  - Make sure your libraries are well supported (recently updated)
+  - Make sure each library's file size fits its utility for your project
+    - Example: [DayJS](https://www.npmjs.com/package/dayjs) vs [MomentJS](https://www.npmjs.com/package/moment) for date formatting and comparison
+- JSX-A11y is part of ESLint config to check for accessibility issues in JSX / HTML output. All CDC apps are tested for [508 compliance](https://www.section508.gov/). Another good tool for checking page content for 508 compliance / web accessibility is the [Axe DevTools browser extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd).
 
 ### React Hooks, Context and functional components
+
 This template is using [React Hooks](https://reactjs.org/docs/hooks-custom.html) for state management and [Context](https://reactjs.org/docs/context.html) for application state management / configuration. It's a good starting point for most projects.
 
-You may find if your project is complex enough to benefit from [Redux](https://redux.js.org/). We feel it's better to err on the side of simplicity up front.
+You may find if your project is complex enough to benefit from [Redux](https://redux.js.org/). We feel it's better to err on the side of simplicity up front. You may also find need to use Class-based React components, or are more familiar with their format / structure.
 
 ## Browser Support
 

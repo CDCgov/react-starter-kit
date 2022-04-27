@@ -6,6 +6,7 @@ module.exports = {
 		browser: true,
 	},
 
+    // we're using some ESLint plugins for linting support
 	plugins: ['jsx-a11y', 'import', 'react'],
 
 	extends: [

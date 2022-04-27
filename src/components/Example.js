@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Context from '../context';
 import testImage from '../assets/test-image.png';
@@ -8,7 +8,7 @@ const Example = ({ backgroundColor }) => {
 	/**
 	 * A simple piece of state that is a number we display on the page.
 	 * This code creates the actual state variable `number` and `setNumber`
-	 * The method you call to update this piece of state.
+	 * The method `setNumber` is used to update this piece of state.
 	 */
 	const [number, setNumber] = useState(0);
 
@@ -37,12 +37,24 @@ const Example = ({ backgroundColor }) => {
         styleObj.backgroundColor = backgroundColor;
     }
 
+    // here we're watching number
+	useEffect( () => {
+        if (10 === number) {
+            alert('You\'ve reached 10 clicks.');
+        } else if (20 < number) {
+            alert('You\'re at ' + number + ' clicks. Resetting.');
+            setNumber(0);
+        }
+	}, [number] );
+
 	/**
 	 * Functional components always return a JSX object, which is
 	 * the templating language React uses. It's a modified form of HTML
 	 * usually surrounded by parenthesis. There are some differences,
 	 * usually in attribute names.
 	 * Learn more: https://reactjs.org/docs/introducing-jsx.html
+     * Also important to note for anyone new to React, this HTML is rerendered
+     * on every change to state, by design.
 	 */
 	return (
 		<section style={styleObj} className="demo-react-app container mt-5">
