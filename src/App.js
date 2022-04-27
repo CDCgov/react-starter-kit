@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import Context from './context';
 import Example from './components/Example';
 
-import './styles.scss';
+import './scss/styles.scss';
 
 export default function App() {
-  const [pageTitle, setPageTitle] = useState('CDC React Starter Kit');
+	const [pageTitle, setPageTitle] = useState('CDC React Starter Kit');
 
-  return (
-    <Context.Provider value={{ pageTitle, setPageTitle }}>
-      <Example backgroundColor="#F5F5F5" />
-    </Context.Provider>
-  );
+	return (
+		<Context.Provider value={{ pageTitle, setPageTitle }}>
+			<Example backgroundColor="#F5F5F5" />
+		</Context.Provider>
+	);
 }

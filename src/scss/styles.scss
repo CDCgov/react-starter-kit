@@ -1,0 +1,52 @@
+/**
+    For this demo, we're pulling in Bootstrap 4 at the top.
+    NOTE: This impacts the full page, and adds weight to your output CSS.
+
+    CDC TemplatePackage has Bootstrap 4 in it, so on cdc.gov pages
+    This is redundant.
+
+    If you're building a single page app (the JS renders the full page) and
+    need the CDC site header and footer, check this package out.
+
+    https://github.com/cdcent/TemplatePackage/packages/1136606
+
+    npm install @cdcent/templatepackage-react
+
+**/
+@import "~bootstrap/scss/bootstrap";
+
+/**
+    It helps to break out your scss files by their function / purpose.
+    For simple widgets, this can be a handful of SCSS partials.
+    For a more robust single page app, check out this structure:
+
+    https://sass-guidelin.es/#the-7-1-pattern
+
+    The folder names aren't important, so long as they make sense
+    to your team and signal a common purpose.
+
+**/
+
+// 1. Abstracts
+//    Generall anything that doesn't output CSS. Variables, mixins.
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+// 2. Base
+//    Top level page rules. CSS reset, typography / fonts.
+// @import "./base/reset"; // for a full page app, you may need a reset CSS
+@import "./base/typography";
+
+// 3. Features
+//    Start breaking out by feature. Many features, 1 folder.
+//    Can by 'components', or what makes sense for your project.
+
+// This helps scope your styles to just your app - important for widgets
+.demo-react-app {
+
+    @import "./feature/example";
+    @import "./feature/second";
+
+}
+
+

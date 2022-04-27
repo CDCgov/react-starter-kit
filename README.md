@@ -1,12 +1,22 @@
-# CDC React Starter Kit
-This is a simple starter kit for creating [ReactJS](https://reactjs.org/) based projects at CDC. It comes with configurable support for older browsers, [ESLint](https://eslint.org/) rules plugged in, and comments where you can modify and adjust. It also avoids some of the overhead added by the traditional [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) initialization.
+# React Starter Kit
 
-### Keep it Simple ([KISS](https://en.wikipedia.org/wiki/KISS_principle))
-Goal of this template is to provide the basics for starting a React app. Where choices were made, they are commented in the configuration files.
+This is a simple starter kit ("stub") for creating [ReactJS](https://reactjs.org/) based projects.
+
+There's many ways to start a React project if you haven't already. Some teams prefer to use [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) command line tool, which is another valid starting point. This just bakes in some starting setup for a standard JS effort.
+
+
+- [ESLint](https://eslint.org/) configuration
+- [Prettier](https://prettier.io/docs/en/index.html) config
+- Precommit hooks
+- Babel translation for older browsers (IE11)
+
+For CDC this also includes some information for supporting CDC.gov specific web tools.
 
 ## Getting Started
 
-The only requirement is [NodeJS]() 14x or higher.
+Only requirement is [NodeJS](https://nodejs.org/en/) LTS version (currently v16).
+
+You can clone this repo and work with it as a base set of files, or use the GitHub template feature.
 
 1. Click the **Use this template** green button at the top right on Github, or simply follow [this link](https://github.com/CDCgov/react-starter-kit/generate).
    - Make sure you select the appropriate organization. If this is for an internal project that will not be shared as open source, please select **`cdcent`** not `cdcgov`.
@@ -14,15 +24,17 @@ The only requirement is [NodeJS]() 14x or higher.
 3. Run `npm install` to install the needed packages
 4. Run `npm start` to start up the development server. It should open your system's default browser with the URL and refresh to reflect code changes you make upon save.
 
-### Building
+## Building
 
-To build the project, run `npm run build` and it will compile everything into a `/dist/` folder. You will either have one `bundle.js` file or multiple that are chunked for performance.
+Source JS files under `./src/` ultimately need to build built for public web use, so run:
 
-Inside the `/dist/` folder is a dynamically generated `index.html` that uses `/src/index.html` as a base and injects the js files that were created in the process into it.
+```bash
+npm run build
+```
 
-The `/dist/` folder is self contained so you could drop it onto a server and it will load the index.html or you can take the generated JavaScript file(s) and include them on a different page, as long as you have a container element with the same ID that is specified in `index.js` for React to lock onto and render inside of.
+And built assets will update under the `./dist/` folder. There are used for the final output web project.
 
-## High Level Setup Overview
+## Setup Overview
 
 This section describes the major underlying components of the project and how they all fit together.
 

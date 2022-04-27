@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import App from './App';
 
 /**
  * Here is where you attach each instance of your React App to the page
@@ -8,8 +8,8 @@ import App from './App'
  * query selector to look for a class or custom HTML element
  */
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.querySelector('#react-container')
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+	document.querySelector('#react-container')
 );
