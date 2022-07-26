@@ -91,9 +91,7 @@ While a lot of the code used in this starter kit will be for internal code, we s
 
 ## Contributing
 
-Contributions to this starter kit from outside users are welcome, though if they do not fit our specific team's needs they will likely be rejected. You are welcome to fork the project if that happens. If you are not an approved contributor, you will have to [fork this repository](https://help.github.com/articles/fork-a-repo) and submit a pull request that way.
-
-All comments, messages, pull requests, and other submissions received through CDC including this GitHub page may be subject to applicable federal law, including but not limited to the Federal Records Act, and may be archived. Learn more at http://www.cdc.gov/other/privacy.html.
+We welcome issues and PRs from forks, just note all comments, messages, pull requests, and other submissions received through CDC including this GitHub page may be subject to applicable federal law, including but not limited to the Federal Records Act, and may be archived. Learn more at http://www.cdc.gov/other/privacy.html. Otherwise, please, make this better. :)
 
 ## Notices
 
