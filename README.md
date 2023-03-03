@@ -2,7 +2,6 @@
 
 This is a simple starter kit ("stub") for creating [ReactJS](https://reactjs.org/) based projects. There's a few different ways to start a React project if you haven't already; some teams prefer to use [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) command line tool. This approach uses WebPack and bakes in some starting setup for a standard JS app effort.
 
-
 - [ESLint](https://eslint.org/) configuration
 - [Prettier](https://prettier.io/docs/en/index.html) config
 - [WebPack](https://webpack.js.org/) configuration for local development and building assets
@@ -10,6 +9,17 @@ This is a simple starter kit ("stub") for creating [ReactJS](https://reactjs.org
 - Precommit hooks with lint checks
 
 For CDC this also includes some information for supporting CDC.gov specific web tools.
+
+## TL;DR:
+
+Clone this repo, then run in command line:
+
+```bash
+npm install
+npm run start
+```
+
+Browser will load a React app you can experiment with. See the files under `src`.
 
 ## Getting Started
 
